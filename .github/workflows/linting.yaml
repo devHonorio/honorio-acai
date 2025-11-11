@@ -1,0 +1,38 @@
+name: Linting
+
+on: pull_request
+
+jobs:
+  eslint:
+    name: Eslint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: v25.0.0
+
+      - run: npm ci
+
+      - run: npm run lint
+
+  commitlint:
+    name: commitlint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/hydrogen
+
+      - run: npm ci
+
+      - run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
