@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "commit": "cz",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:prettier:check": "prettier . --check",
+    "lint:prettier:write": "prettier . --write"
   },
   "dependencies": {
     "next": "16.0.1",
@@ -28,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
     "husky": "^9.1.7",
+    "prettier": "3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
