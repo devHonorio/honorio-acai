@@ -9,7 +9,8 @@
     "lint": "eslint",
     "commit": "cz",
     "prepare": "husky",
-    "lint:prettier:check": "prettier . --check"
+    "lint:prettier:check": "prettier . --check",
+    "lint:prettier:write": "prettier . --write"
   },
   "dependencies": {
     "next": "16.0.1",
