@@ -13,6 +13,8 @@
     "lint:prettier:write": "prettier . --write"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "dotenv-expand": "^12.0.3",
     "next": "16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
@@ -31,6 +33,7 @@
     "eslint-config-next": "16.0.1",
     "husky": "^9.1.7",
     "prettier": "3.6.2",
+    "prisma": "^6.19.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
