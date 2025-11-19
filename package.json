@@ -2,6 +2,7 @@
   "name": "honorio-acai",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "npm run services:up && next dev",
     "build": "next build",
@@ -11,8 +12,13 @@
     "prepare": "husky",
     "lint:prettier:check": "prettier . --check",
     "lint:prettier:write": "prettier . --write",
-    "test": "vitest",
-    "services:up": "docker compose up -d"
+    "test": "npm run services:up && npm run waitForPostgres && vitest run",
+    "posttest": "npm run services:stop",
+    "test:watch": "vitest",
+    "services:up": "docker compose up -d",
+    "services:stop": "docker compose stop",
+    "services:down": "docker compose down",
+    "waitForPostgres": "node tests/scripts/wait-for-postgres.js"
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
