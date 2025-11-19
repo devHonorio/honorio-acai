@@ -9,7 +9,7 @@ describe("DbInfoServices", () => {
       expect(status).toEqual({
         max_connections: 100,
         opened_connections: 9,
-        version: 18,
+        version: 18.1,
       });
     });
   });

@@ -2,7 +2,7 @@ services:
   db:
     container_name: db-honorio-acai
 
-    image: "postgres:alpine3.22"
+    image: "postgres:18.1-alpine3.22"
 
     env_file:
       - ./.env

@@ -1,0 +1,20 @@
+name: Testing
+
+on: pull_request
+
+jobs:
+  tests:
+    name: Tests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: v25.0.0
+
+      - run: npm ci
+
+      - run: npm test
